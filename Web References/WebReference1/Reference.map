@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://210.14.26.167/kgiws/backoffice.asmx?wsdl" filename="backoffice.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://210.14.26.167/kgiws/backoffice.asmx?disco" filename="backoffice.disco" />
+  </Results>
+</DiscoveryClientResultsFile>

@@ -1,0 +1,349 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --width: 414px;
+    --height: 825px;
+    --bg: #dde2e7;
+    --containerPadding: 20px;
+    --blue: 28, 105, 212;
+    --light: #ffffff;
+    --lightgray: #f8f9f9;
+    --lightgray2: #f4f4f8;
+    --lightgray3: #f8f8f8;
+    --txtcolo1: #565757;
+    --transition: 200ms;
+    --transitionDelay1: 100ms;
+    --transitionDelay2: 300ms;
+    --transitionDelay3: 450ms;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg) !important;
+    height: auto;
+    display: flex;
+}
+
+.container__fw {
+    position: relative;
+    margin: 0 auto;
+    width: var(--width);
+    height: auto;
+    min-height: 100vh;
+    background-color: var(--light);
+}
+
+.main__fw {
+    padding: var(--containerPadding);
+}
+
+.main__fw2 {
+    padding: 0 var(--containerPadding) var(--containerPadding) var(--containerPadding);
+}
+
+.poppins__regular__fw {
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.cursor__pointer {
+    cursor: pointer;
+}
+
+/* Home */
+.fw__right__bal {
+    background: #333;
+}
+
+.fw__marquee_badge {
+    background-color: var(--lightgray3);
+}
+
+swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+swiper-slide img.fw__topbar__img {
+    width: 50% !important;
+}
+
+swiper-slide img.fw__topbar__img {
+    width: 50% !important;
+}
+
+.header {
+    overflow: hidden;
+    /*overflow-x: hidden;*/
+    overflow-x: scroll;
+    margin: auto 1px;
+}
+
+.pills {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pills .pill {
+    margin: auto 5px;
+    padding: 7px 22px;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--txtcolo1);
+    transition: var(--transition);
+}
+
+.pills .pill:hover {
+    cursor: default;
+    background-color: rgba(28, 105, 212, 0.1);
+}
+
+.pills .pill.active {
+    background-color: #1c69d4;
+    color: white;
+}
+
+.nav__footer {
+    width: var(--width) !important;
+    margin: auto;
+}
+
+.game__card {
+    margin-bottom: 5rem;
+    margin-top: 1rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.image__game {
+    width: 110px;
+    border-radius: 5px;
+}
+
+.image__game_col {
+    flex: 0 !important;
+    padding-left: 3px !important;
+    padding-right: 3px !important;
+}
+
+.fw__cash__in {
+    font-weight: bold;
+}
+
+.fw__cash__in2 {
+    font-size: 15px;
+}
+
+.fw__cash__in3 {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.fw__cashin__btn {
+    font-size: 15px !important;
+}
+
+.fw__cash__in__amount {
+    border-radius: 20px;
+}
+
+/* End > Home */
+/* Transaction */
+.withdraw__text__code {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.withdraw__text_codes {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 130px;
+}
+
+.modal__trans__font {
+    font-size: 12px;
+}
+
+.btn__modal__trans {
+    border-radius: 50px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.7px !important;
+}
+/* End > Transaction */
+
+nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 414px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.nav-box {
+    display: flex;
+    padding: 8px;
+    background-color: #fff;
+    box-shadow: 0px 0px 16px 0px #4444;
+}
+
+.nav-container {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    justify-content: space-around;
+    padding: 0 !important;
+}
+
+.nav__item {
+    display: flex;
+    position: relative;
+    padding: 2px;
+}
+
+.nav__item.active .nav__item-icon {
+    margin-top: -26px;
+    box-shadow: 0px 0px 16px 0px #4444;
+}
+
+.nav__item.active .nav__item-text {
+    transform: scale(1);
+}
+
+.nav__item-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #2f3046;
+    text-decoration: none;
+}
+
+.nav__item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6em;
+    background-color: #fff;
+    border-radius: 50%;
+    height: 46px;
+    width: 46px;
+    transition: margin-top 250ms ease-in-out, box-shadow 250ms ease-in-out;
+}
+
+.nav__item-text {
+    position: absolute;
+    bottom: 0;
+    transform: scale(0);
+    transition: transform 250ms ease-in-out;
+}
+
+.nav__bot__fw {
+    font-size: 11px;
+}
+
+/*.modal.fade .modal-dialog {
+    transition: transform .3s ease-in;
+    transform: translate(0, 10px) !important;
+}
+
+.modal-dialog {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0% !important;
+    right: 0% !important;
+    margin-bottom: 0 !important;
+}
+
+.modal.show .modal-dialog {
+    transform: none;
+}
+
+.modal-content {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}*/
+
+/* Profile */
+.profile__form {
+    margin-bottom: 6rem;
+}
+
+.fw___profile__img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+/* End > Profile */
+
+@media only screen and (max-width: 380px) {
+    /* Transaction */
+    .withdraw__text__code {
+        font-size: 10px;
+        font-weight: 600;
+        color: rgba(128, 123, 123, 0.533)
+    }
+    /* End > Transaction */
+
+    /* Withdrawal Request */
+    .withdraw__text__code__2 {
+        font-size: 13px;
+    }
+    /* End > Withdrawal Request */
+
+    .image__game {
+        width: 105px;
+    }
+
+    .withdraw__text__code {
+        font-size: 10px;
+        font-weight: 300;
+    }
+
+    .image__game_col {
+        padding-left: 2px !important;
+    }
+
+    .image__game {
+        width: 100px !important;
+    }
+}
+
+
+@media only screen and (min-width: 415px){
+    .trans__modal {
+        width: 400px !important;
+        margin: auto !important;
+    }
+}

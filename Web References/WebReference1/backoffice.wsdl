@@ -1,0 +1,2314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://ws.instawin.ph/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://ws.instawin.ph/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ws.instawin.ph/">
+      <s:element name="GetServerDateTime">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServerDateTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetServerDateTimeResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRemoteIPAddress">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRemoteIPAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRemoteIPAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TOOL_GenerateMD5String">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StringToEncrpt" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TOOL_GenerateMD5StringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TOOL_GenerateMD5StringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TOOL_3DESEncryptString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StringToEncrypt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HashCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TOOL_3DESEncryptStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TOOL_3DESEncryptStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TOOL_3DESDecryptString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptedString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HashCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TOOL_3DESDecryptStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TOOL_3DESDecryptStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComBannedCriteria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BannedIdx" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="BannedCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BannedName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BannedDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BannedClass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComBannedCriteriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertComBannedCriteriaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCountryInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CountryIdx" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CountryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TelephoneCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nationality" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreatedByUserIdx" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCountryInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertCountryInfoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComExclusionOrders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExclusionIdx" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExclusionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExclusionDesc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ValidityPeriod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComExclusionOrdersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertComExclusionOrdersResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComGenericCodes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GenericIdx" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="GenericTypeIdx" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="GenericName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GenericCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="GenericNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComGenericCodesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertComGenericCodesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComGenericTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GenericTypeIdx" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="GenericTypeName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GenericTypeInfo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComGenericTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertComGenericTypesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComUserAccessList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserLevel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreatedByUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComUserAccessListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertComUserAccessListResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComUserIPAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreatedByUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComUserIPAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertComUserIPAddressResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComBranchProfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BranchIdx" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchLocation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsLicensee" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsParent" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="BillingRateIdx" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ChildBranchIdx" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="AllowGlobalSearch" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreatedByUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchLogoFilename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchLatitude" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchLongitude" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComBranchProfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertComBranchProfileResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComEmployeeInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmpPhoto" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PassHash" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreatedByUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComEmployeeInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertComEmployeeInformationResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateComEmployeeInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmpPhoto" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="AccessLevel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreatedByUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateComEmployeeInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateComEmployeeInformationResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserAccessStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SetAccountStatusTo" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="PerformedByUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserAccessStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateUserAccessStatusResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateGenericCodes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GenericIdx" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="GenericName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GenericCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GenericNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateGenericCodesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateGenericCodesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserAccessCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OldAccess" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NewAccess" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserAccessCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateUserAccessCodeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserForgotAccess">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserForgotAccessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateUserForgotAccessResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertUserModuleLevel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModuleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LevelName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertUserModuleLevelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertUserModuleLevelResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserIPAddressList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserIPAddressListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserIPAddressListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicationUsersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserModuleLevelList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserModuleLevelListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserModuleLevelListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPriviledgeList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPriviledgeListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserPriviledgeListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBranchList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBranchListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBranchListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBranchParentChild">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsChild" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="BranchIdx" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBranchParentChildResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBranchParentChildResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExclusionList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExclusionListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExclusionListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBannedList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBannedListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBannedListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountryList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountryListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCountryListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountryTelephoneCodes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountryTelephoneCodesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCountryTelephoneCodesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountryNationalityList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountryNationalityListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCountryNationalityListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBillingViewedGuestPerBranch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BranchIdx" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateTo" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBillingViewedGuestPerBranchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBillingViewedGuestPerBranchResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBillingViewedGuestPerUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserIdx" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateTo" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBillingViewedGuestPerUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBillingViewedGuestPerUserResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBillingRates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBillingRatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBillingRatesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComBillingRates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RateCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AccessRate" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreatedByUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComBillingRatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertComBillingRatesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationNotices">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NoticeType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationNoticesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicationNoticesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComApplicationNotice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NoticeType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationNotice" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateValidity" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreatedByUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertComApplicationNoticeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertComApplicationNoticeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TOOL_ApplicationMailer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreatedByUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TOOL_ApplicationMailerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TOOL_ApplicationMailerResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBranchList_BCF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBranchList_BCFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBranchList_BCFResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTerminalList_By_Branch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BranchIdx" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTerminalList_By_BranchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTerminalList_By_BranchResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTerminalList_Detail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TerminalIdx" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTerminalList_DetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTerminalList_DetailResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateApplicationUsersStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserIdx" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Trigger" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateApplicationUsersStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateApplicationUsersStatusResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBranchProfileStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BranchIdx" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Trigger" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBranchProfileStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateBranchProfileStatusResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBranchTerminalsStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BranchTerminalIdx" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreatedByUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBranchTerminalsStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateBranchTerminalsStatusResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertBranchTerminals">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExtID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="GroupIdx" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PTCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PTCashier" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndNum" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertBranchTerminalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertBranchTerminalsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBranchList_BVL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserIdx" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBranchList_BVLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBranchList_BVLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRPTLoginHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Trigger" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Type" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRPTLoginHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRPTLoginHistoryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetServerDateTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServerDateTime" />
+  </wsdl:message>
+  <wsdl:message name="GetServerDateTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServerDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRemoteIPAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRemoteIPAddress" />
+  </wsdl:message>
+  <wsdl:message name="GetRemoteIPAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRemoteIPAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="TOOL_GenerateMD5StringSoapIn">
+    <wsdl:part name="parameters" element="tns:TOOL_GenerateMD5String" />
+  </wsdl:message>
+  <wsdl:message name="TOOL_GenerateMD5StringSoapOut">
+    <wsdl:part name="parameters" element="tns:TOOL_GenerateMD5StringResponse" />
+  </wsdl:message>
+  <wsdl:message name="TOOL_3DESEncryptStringSoapIn">
+    <wsdl:part name="parameters" element="tns:TOOL_3DESEncryptString" />
+  </wsdl:message>
+  <wsdl:message name="TOOL_3DESEncryptStringSoapOut">
+    <wsdl:part name="parameters" element="tns:TOOL_3DESEncryptStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="TOOL_3DESDecryptStringSoapIn">
+    <wsdl:part name="parameters" element="tns:TOOL_3DESDecryptString" />
+  </wsdl:message>
+  <wsdl:message name="TOOL_3DESDecryptStringSoapOut">
+    <wsdl:part name="parameters" element="tns:TOOL_3DESDecryptStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertComBannedCriteriaSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertComBannedCriteria" />
+  </wsdl:message>
+  <wsdl:message name="InsertComBannedCriteriaSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertComBannedCriteriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertCountryInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertCountryInfo" />
+  </wsdl:message>
+  <wsdl:message name="InsertCountryInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertCountryInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertComExclusionOrdersSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertComExclusionOrders" />
+  </wsdl:message>
+  <wsdl:message name="InsertComExclusionOrdersSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertComExclusionOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertComGenericCodesSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertComGenericCodes" />
+  </wsdl:message>
+  <wsdl:message name="InsertComGenericCodesSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertComGenericCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertComGenericTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertComGenericTypes" />
+  </wsdl:message>
+  <wsdl:message name="InsertComGenericTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertComGenericTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertComUserAccessListSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertComUserAccessList" />
+  </wsdl:message>
+  <wsdl:message name="InsertComUserAccessListSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertComUserAccessListResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertComUserIPAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertComUserIPAddress" />
+  </wsdl:message>
+  <wsdl:message name="InsertComUserIPAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertComUserIPAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertComBranchProfileSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertComBranchProfile" />
+  </wsdl:message>
+  <wsdl:message name="InsertComBranchProfileSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertComBranchProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertComEmployeeInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertComEmployeeInformation" />
+  </wsdl:message>
+  <wsdl:message name="InsertComEmployeeInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertComEmployeeInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateComEmployeeInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateComEmployeeInformation" />
+  </wsdl:message>
+  <wsdl:message name="UpdateComEmployeeInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateComEmployeeInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserAccessStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserAccessStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserAccessStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserAccessStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateGenericCodesSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateGenericCodes" />
+  </wsdl:message>
+  <wsdl:message name="UpdateGenericCodesSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateGenericCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserAccessCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserAccessCode" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserAccessCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserAccessCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserForgotAccessSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserForgotAccess" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserForgotAccessSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserForgotAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertUserModuleLevelSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertUserModuleLevel" />
+  </wsdl:message>
+  <wsdl:message name="InsertUserModuleLevelSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertUserModuleLevelResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserIPAddressListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserIPAddressList" />
+  </wsdl:message>
+  <wsdl:message name="GetUserIPAddressListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserIPAddressListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicationUsers" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicationUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserModuleLevelListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserModuleLevelList" />
+  </wsdl:message>
+  <wsdl:message name="GetUserModuleLevelListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserModuleLevelListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPriviledgeListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserPriviledgeList" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPriviledgeListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserPriviledgeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBranchList" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBranchListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchParentChildSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBranchParentChild" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchParentChildSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBranchParentChildResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExclusionListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExclusionList" />
+  </wsdl:message>
+  <wsdl:message name="GetExclusionListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExclusionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBannedListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBannedList" />
+  </wsdl:message>
+  <wsdl:message name="GetBannedListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBannedListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountryList" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryTelephoneCodesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountryTelephoneCodes" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryTelephoneCodesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountryTelephoneCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryNationalityListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountryNationalityList" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryNationalityListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountryNationalityListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingViewedGuestPerBranchSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBillingViewedGuestPerBranch" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingViewedGuestPerBranchSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBillingViewedGuestPerBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingViewedGuestPerUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBillingViewedGuestPerUser" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingViewedGuestPerUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBillingViewedGuestPerUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingRatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBillingRates" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingRatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBillingRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertComBillingRatesSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertComBillingRates" />
+  </wsdl:message>
+  <wsdl:message name="InsertComBillingRatesSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertComBillingRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationNoticesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicationNotices" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationNoticesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicationNoticesResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertComApplicationNoticeSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertComApplicationNotice" />
+  </wsdl:message>
+  <wsdl:message name="InsertComApplicationNoticeSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertComApplicationNoticeResponse" />
+  </wsdl:message>
+  <wsdl:message name="TOOL_ApplicationMailerSoapIn">
+    <wsdl:part name="parameters" element="tns:TOOL_ApplicationMailer" />
+  </wsdl:message>
+  <wsdl:message name="TOOL_ApplicationMailerSoapOut">
+    <wsdl:part name="parameters" element="tns:TOOL_ApplicationMailerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchList_BCFSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBranchList_BCF" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchList_BCFSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBranchList_BCFResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTerminalList_By_BranchSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTerminalList_By_Branch" />
+  </wsdl:message>
+  <wsdl:message name="GetTerminalList_By_BranchSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTerminalList_By_BranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTerminalList_DetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTerminalList_Detail" />
+  </wsdl:message>
+  <wsdl:message name="GetTerminalList_DetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTerminalList_DetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateApplicationUsersStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateApplicationUsersStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateApplicationUsersStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateApplicationUsersStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBranchProfileStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBranchProfileStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBranchProfileStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBranchProfileStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBranchTerminalsStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBranchTerminalsStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBranchTerminalsStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBranchTerminalsStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertBranchTerminalsSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertBranchTerminals" />
+  </wsdl:message>
+  <wsdl:message name="InsertBranchTerminalsSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertBranchTerminalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchList_BVLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBranchList_BVL" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchList_BVLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBranchList_BVLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRPTLoginHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetRPTLoginHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetRPTLoginHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetRPTLoginHistoryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="InstawinWebServiceAdminSoap">
+    <wsdl:operation name="GetServerDateTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Server DateTime</wsdl:documentation>
+      <wsdl:input message="tns:GetServerDateTimeSoapIn" />
+      <wsdl:output message="tns:GetServerDateTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRemoteIPAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Generates Remote Client IP Address</wsdl:documentation>
+      <wsdl:input message="tns:GetRemoteIPAddressSoapIn" />
+      <wsdl:output message="tns:GetRemoteIPAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TOOL_GenerateMD5String">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tool to generate MD5 String</wsdl:documentation>
+      <wsdl:input message="tns:TOOL_GenerateMD5StringSoapIn" />
+      <wsdl:output message="tns:TOOL_GenerateMD5StringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TOOL_3DESEncryptString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tool to encrypt string in 3DES Encryption</wsdl:documentation>
+      <wsdl:input message="tns:TOOL_3DESEncryptStringSoapIn" />
+      <wsdl:output message="tns:TOOL_3DESEncryptStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TOOL_3DESDecryptString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tool to decrypt string in 3DES Encryption</wsdl:documentation>
+      <wsdl:input message="tns:TOOL_3DESDecryptStringSoapIn" />
+      <wsdl:output message="tns:TOOL_3DESDecryptStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertComBannedCriteria">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Create/Update Banned Criteria; BannedIdx=0 For new record</wsdl:documentation>
+      <wsdl:input message="tns:InsertComBannedCriteriaSoapIn" />
+      <wsdl:output message="tns:InsertComBannedCriteriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCountryInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Create/Update Country Information</wsdl:documentation>
+      <wsdl:input message="tns:InsertCountryInfoSoapIn" />
+      <wsdl:output message="tns:InsertCountryInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertComExclusionOrders">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Create/Update Exclusion Order; ExclusionIdx=0 For new record</wsdl:documentation>
+      <wsdl:input message="tns:InsertComExclusionOrdersSoapIn" />
+      <wsdl:output message="tns:InsertComExclusionOrdersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertComGenericCodes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Create/Update Generic Codes; GenericIdx=0 For new record</wsdl:documentation>
+      <wsdl:input message="tns:InsertComGenericCodesSoapIn" />
+      <wsdl:output message="tns:InsertComGenericCodesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertComGenericTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Create/Update Generic Types; GenericTypeIdx=0 For new record</wsdl:documentation>
+      <wsdl:input message="tns:InsertComGenericTypesSoapIn" />
+      <wsdl:output message="tns:InsertComGenericTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertComUserAccessList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Create/Update User Access List</wsdl:documentation>
+      <wsdl:input message="tns:InsertComUserAccessListSoapIn" />
+      <wsdl:output message="tns:InsertComUserAccessListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertComUserIPAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Create/Update User IP Address (Connecting Client)</wsdl:documentation>
+      <wsdl:input message="tns:InsertComUserIPAddressSoapIn" />
+      <wsdl:output message="tns:InsertComUserIPAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertComBranchProfile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Create New Branch Profile</wsdl:documentation>
+      <wsdl:input message="tns:InsertComBranchProfileSoapIn" />
+      <wsdl:output message="tns:InsertComBranchProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertComEmployeeInformation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Create New Employee Profile</wsdl:documentation>
+      <wsdl:input message="tns:InsertComEmployeeInformationSoapIn" />
+      <wsdl:output message="tns:InsertComEmployeeInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateComEmployeeInformation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Update Employee Profile</wsdl:documentation>
+      <wsdl:input message="tns:UpdateComEmployeeInformationSoapIn" />
+      <wsdl:output message="tns:UpdateComEmployeeInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserAccessStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Update User Access Status</wsdl:documentation>
+      <wsdl:input message="tns:UpdateUserAccessStatusSoapIn" />
+      <wsdl:output message="tns:UpdateUserAccessStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGenericCodes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Update Generic Codes</wsdl:documentation>
+      <wsdl:input message="tns:UpdateGenericCodesSoapIn" />
+      <wsdl:output message="tns:UpdateGenericCodesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserAccessCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Update User Password (old password required)</wsdl:documentation>
+      <wsdl:input message="tns:UpdateUserAccessCodeSoapIn" />
+      <wsdl:output message="tns:UpdateUserAccessCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserForgotAccess">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Forgot Password</wsdl:documentation>
+      <wsdl:input message="tns:UpdateUserForgotAccessSoapIn" />
+      <wsdl:output message="tns:UpdateUserForgotAccessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserModuleLevel">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Create New User Module/Level</wsdl:documentation>
+      <wsdl:input message="tns:InsertUserModuleLevelSoapIn" />
+      <wsdl:output message="tns:InsertUserModuleLevelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIPAddressList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Get User IP Address List</wsdl:documentation>
+      <wsdl:input message="tns:GetUserIPAddressListSoapIn" />
+      <wsdl:output message="tns:GetUserIPAddressListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Get Application Users</wsdl:documentation>
+      <wsdl:input message="tns:GetApplicationUsersSoapIn" />
+      <wsdl:output message="tns:GetApplicationUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserModuleLevelList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Get Modules and Levels List</wsdl:documentation>
+      <wsdl:input message="tns:GetUserModuleLevelListSoapIn" />
+      <wsdl:output message="tns:GetUserModuleLevelListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPriviledgeList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Get User Access Priviledge</wsdl:documentation>
+      <wsdl:input message="tns:GetUserPriviledgeListSoapIn" />
+      <wsdl:output message="tns:GetUserPriviledgeListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Get Branch List</wsdl:documentation>
+      <wsdl:input message="tns:GetBranchListSoapIn" />
+      <wsdl:output message="tns:GetBranchListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchParentChild">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Get Branch Parent/Child List</wsdl:documentation>
+      <wsdl:input message="tns:GetBranchParentChildSoapIn" />
+      <wsdl:output message="tns:GetBranchParentChildSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExclusionList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Get Exclusion List</wsdl:documentation>
+      <wsdl:input message="tns:GetExclusionListSoapIn" />
+      <wsdl:output message="tns:GetExclusionListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBannedList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Get Branch List</wsdl:documentation>
+      <wsdl:input message="tns:GetBannedListSoapIn" />
+      <wsdl:output message="tns:GetBannedListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Get Country List</wsdl:documentation>
+      <wsdl:input message="tns:GetCountryListSoapIn" />
+      <wsdl:output message="tns:GetCountryListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryTelephoneCodes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Get Country Telephone List</wsdl:documentation>
+      <wsdl:input message="tns:GetCountryTelephoneCodesSoapIn" />
+      <wsdl:output message="tns:GetCountryTelephoneCodesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryNationalityList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Get Country's Nationality List</wsdl:documentation>
+      <wsdl:input message="tns:GetCountryNationalityListSoapIn" />
+      <wsdl:output message="tns:GetCountryNationalityListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingViewedGuestPerBranch">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Report: Billing on Viewed Guest per Branch</wsdl:documentation>
+      <wsdl:input message="tns:GetBillingViewedGuestPerBranchSoapIn" />
+      <wsdl:output message="tns:GetBillingViewedGuestPerBranchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingViewedGuestPerUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Report: Billing on Viewed Guest per User</wsdl:documentation>
+      <wsdl:input message="tns:GetBillingViewedGuestPerUserSoapIn" />
+      <wsdl:output message="tns:GetBillingViewedGuestPerUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingRates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Report: Billing Rates</wsdl:documentation>
+      <wsdl:input message="tns:GetBillingRatesSoapIn" />
+      <wsdl:output message="tns:GetBillingRatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertComBillingRates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Create Billing Rates</wsdl:documentation>
+      <wsdl:input message="tns:InsertComBillingRatesSoapIn" />
+      <wsdl:output message="tns:InsertComBillingRatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationNotices">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Application Notices</wsdl:documentation>
+      <wsdl:input message="tns:GetApplicationNoticesSoapIn" />
+      <wsdl:output message="tns:GetApplicationNoticesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertComApplicationNotice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create Application Notices</wsdl:documentation>
+      <wsdl:input message="tns:InsertComApplicationNoticeSoapIn" />
+      <wsdl:output message="tns:InsertComApplicationNoticeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TOOL_ApplicationMailer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Application Mailer</wsdl:documentation>
+      <wsdl:input message="tns:TOOL_ApplicationMailerSoapIn" />
+      <wsdl:output message="tns:TOOL_ApplicationMailerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchList_BCF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Get Branch List BCF</wsdl:documentation>
+      <wsdl:input message="tns:GetBranchList_BCFSoapIn" />
+      <wsdl:output message="tns:GetBranchList_BCFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTerminalList_By_Branch">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Get Terminal List by Branch</wsdl:documentation>
+      <wsdl:input message="tns:GetTerminalList_By_BranchSoapIn" />
+      <wsdl:output message="tns:GetTerminalList_By_BranchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTerminalList_Detail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Get Terminal Details</wsdl:documentation>
+      <wsdl:input message="tns:GetTerminalList_DetailSoapIn" />
+      <wsdl:output message="tns:GetTerminalList_DetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateApplicationUsersStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Update Application Users Status</wsdl:documentation>
+      <wsdl:input message="tns:UpdateApplicationUsersStatusSoapIn" />
+      <wsdl:output message="tns:UpdateApplicationUsersStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBranchProfileStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Update Branch Profile Status</wsdl:documentation>
+      <wsdl:input message="tns:UpdateBranchProfileStatusSoapIn" />
+      <wsdl:output message="tns:UpdateBranchProfileStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBranchTerminalsStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Branch Terminals Status</wsdl:documentation>
+      <wsdl:input message="tns:UpdateBranchTerminalsStatusSoapIn" />
+      <wsdl:output message="tns:UpdateBranchTerminalsStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBranchTerminals">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert record on Branch Terminals</wsdl:documentation>
+      <wsdl:input message="tns:InsertBranchTerminalsSoapIn" />
+      <wsdl:output message="tns:InsertBranchTerminalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchList_BVL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Common Data: Get Branch List BVL</wsdl:documentation>
+      <wsdl:input message="tns:GetBranchList_BVLSoapIn" />
+      <wsdl:output message="tns:GetBranchList_BVLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRPTLoginHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Login History Details - Per Outlet, Username and IP Address</wsdl:documentation>
+      <wsdl:input message="tns:GetRPTLoginHistorySoapIn" />
+      <wsdl:output message="tns:GetRPTLoginHistorySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InstawinWebServiceAdminSoap" type="tns:InstawinWebServiceAdminSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServerDateTime">
+      <soap:operation soapAction="http://ws.instawin.ph/GetServerDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemoteIPAddress">
+      <soap:operation soapAction="http://ws.instawin.ph/GetRemoteIPAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TOOL_GenerateMD5String">
+      <soap:operation soapAction="http://ws.instawin.ph/TOOL_GenerateMD5String" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TOOL_3DESEncryptString">
+      <soap:operation soapAction="http://ws.instawin.ph/TOOL_3DESEncryptString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TOOL_3DESDecryptString">
+      <soap:operation soapAction="http://ws.instawin.ph/TOOL_3DESDecryptString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComBannedCriteria">
+      <soap:operation soapAction="http://ws.instawin.ph/InsertComBannedCriteria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCountryInfo">
+      <soap:operation soapAction="http://ws.instawin.ph/InsertCountryInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComExclusionOrders">
+      <soap:operation soapAction="http://ws.instawin.ph/InsertComExclusionOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComGenericCodes">
+      <soap:operation soapAction="http://ws.instawin.ph/InsertComGenericCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComGenericTypes">
+      <soap:operation soapAction="http://ws.instawin.ph/InsertComGenericTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComUserAccessList">
+      <soap:operation soapAction="http://ws.instawin.ph/InsertComUserAccessList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComUserIPAddress">
+      <soap:operation soapAction="http://ws.instawin.ph/InsertComUserIPAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComBranchProfile">
+      <soap:operation soapAction="http://ws.instawin.ph/InsertComBranchProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComEmployeeInformation">
+      <soap:operation soapAction="http://ws.instawin.ph/InsertComEmployeeInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateComEmployeeInformation">
+      <soap:operation soapAction="http://ws.instawin.ph/UpdateComEmployeeInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserAccessStatus">
+      <soap:operation soapAction="http://ws.instawin.ph/UpdateUserAccessStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGenericCodes">
+      <soap:operation soapAction="http://ws.instawin.ph/UpdateGenericCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserAccessCode">
+      <soap:operation soapAction="http://ws.instawin.ph/UpdateUserAccessCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserForgotAccess">
+      <soap:operation soapAction="http://ws.instawin.ph/UpdateUserForgotAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserModuleLevel">
+      <soap:operation soapAction="http://ws.instawin.ph/InsertUserModuleLevel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIPAddressList">
+      <soap:operation soapAction="http://ws.instawin.ph/GetUserIPAddressList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationUsers">
+      <soap:operation soapAction="http://ws.instawin.ph/GetApplicationUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserModuleLevelList">
+      <soap:operation soapAction="http://ws.instawin.ph/GetUserModuleLevelList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPriviledgeList">
+      <soap:operation soapAction="http://ws.instawin.ph/GetUserPriviledgeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchList">
+      <soap:operation soapAction="http://ws.instawin.ph/GetBranchList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchParentChild">
+      <soap:operation soapAction="http://ws.instawin.ph/GetBranchParentChild" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExclusionList">
+      <soap:operation soapAction="http://ws.instawin.ph/GetExclusionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBannedList">
+      <soap:operation soapAction="http://ws.instawin.ph/GetBannedList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryList">
+      <soap:operation soapAction="http://ws.instawin.ph/GetCountryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryTelephoneCodes">
+      <soap:operation soapAction="http://ws.instawin.ph/GetCountryTelephoneCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryNationalityList">
+      <soap:operation soapAction="http://ws.instawin.ph/GetCountryNationalityList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingViewedGuestPerBranch">
+      <soap:operation soapAction="http://ws.instawin.ph/GetBillingViewedGuestPerBranch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingViewedGuestPerUser">
+      <soap:operation soapAction="http://ws.instawin.ph/GetBillingViewedGuestPerUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingRates">
+      <soap:operation soapAction="http://ws.instawin.ph/GetBillingRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComBillingRates">
+      <soap:operation soapAction="http://ws.instawin.ph/InsertComBillingRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationNotices">
+      <soap:operation soapAction="http://ws.instawin.ph/GetApplicationNotices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComApplicationNotice">
+      <soap:operation soapAction="http://ws.instawin.ph/InsertComApplicationNotice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TOOL_ApplicationMailer">
+      <soap:operation soapAction="http://ws.instawin.ph/TOOL_ApplicationMailer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchList_BCF">
+      <soap:operation soapAction="http://ws.instawin.ph/GetBranchList_BCF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTerminalList_By_Branch">
+      <soap:operation soapAction="http://ws.instawin.ph/GetTerminalList_By_Branch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTerminalList_Detail">
+      <soap:operation soapAction="http://ws.instawin.ph/GetTerminalList_Detail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateApplicationUsersStatus">
+      <soap:operation soapAction="http://ws.instawin.ph/UpdateApplicationUsersStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBranchProfileStatus">
+      <soap:operation soapAction="http://ws.instawin.ph/UpdateBranchProfileStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBranchTerminalsStatus">
+      <soap:operation soapAction="http://ws.instawin.ph/UpdateBranchTerminalsStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBranchTerminals">
+      <soap:operation soapAction="http://ws.instawin.ph/InsertBranchTerminals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchList_BVL">
+      <soap:operation soapAction="http://ws.instawin.ph/GetBranchList_BVL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRPTLoginHistory">
+      <soap:operation soapAction="http://ws.instawin.ph/GetRPTLoginHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="InstawinWebServiceAdminSoap12" type="tns:InstawinWebServiceAdminSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServerDateTime">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetServerDateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemoteIPAddress">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetRemoteIPAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TOOL_GenerateMD5String">
+      <soap12:operation soapAction="http://ws.instawin.ph/TOOL_GenerateMD5String" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TOOL_3DESEncryptString">
+      <soap12:operation soapAction="http://ws.instawin.ph/TOOL_3DESEncryptString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TOOL_3DESDecryptString">
+      <soap12:operation soapAction="http://ws.instawin.ph/TOOL_3DESDecryptString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComBannedCriteria">
+      <soap12:operation soapAction="http://ws.instawin.ph/InsertComBannedCriteria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCountryInfo">
+      <soap12:operation soapAction="http://ws.instawin.ph/InsertCountryInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComExclusionOrders">
+      <soap12:operation soapAction="http://ws.instawin.ph/InsertComExclusionOrders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComGenericCodes">
+      <soap12:operation soapAction="http://ws.instawin.ph/InsertComGenericCodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComGenericTypes">
+      <soap12:operation soapAction="http://ws.instawin.ph/InsertComGenericTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComUserAccessList">
+      <soap12:operation soapAction="http://ws.instawin.ph/InsertComUserAccessList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComUserIPAddress">
+      <soap12:operation soapAction="http://ws.instawin.ph/InsertComUserIPAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComBranchProfile">
+      <soap12:operation soapAction="http://ws.instawin.ph/InsertComBranchProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComEmployeeInformation">
+      <soap12:operation soapAction="http://ws.instawin.ph/InsertComEmployeeInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateComEmployeeInformation">
+      <soap12:operation soapAction="http://ws.instawin.ph/UpdateComEmployeeInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserAccessStatus">
+      <soap12:operation soapAction="http://ws.instawin.ph/UpdateUserAccessStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGenericCodes">
+      <soap12:operation soapAction="http://ws.instawin.ph/UpdateGenericCodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserAccessCode">
+      <soap12:operation soapAction="http://ws.instawin.ph/UpdateUserAccessCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserForgotAccess">
+      <soap12:operation soapAction="http://ws.instawin.ph/UpdateUserForgotAccess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserModuleLevel">
+      <soap12:operation soapAction="http://ws.instawin.ph/InsertUserModuleLevel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIPAddressList">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetUserIPAddressList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationUsers">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetApplicationUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserModuleLevelList">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetUserModuleLevelList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPriviledgeList">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetUserPriviledgeList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchList">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetBranchList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchParentChild">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetBranchParentChild" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExclusionList">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetExclusionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBannedList">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetBannedList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryList">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetCountryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryTelephoneCodes">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetCountryTelephoneCodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryNationalityList">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetCountryNationalityList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingViewedGuestPerBranch">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetBillingViewedGuestPerBranch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingViewedGuestPerUser">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetBillingViewedGuestPerUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingRates">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetBillingRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComBillingRates">
+      <soap12:operation soapAction="http://ws.instawin.ph/InsertComBillingRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationNotices">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetApplicationNotices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertComApplicationNotice">
+      <soap12:operation soapAction="http://ws.instawin.ph/InsertComApplicationNotice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TOOL_ApplicationMailer">
+      <soap12:operation soapAction="http://ws.instawin.ph/TOOL_ApplicationMailer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchList_BCF">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetBranchList_BCF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTerminalList_By_Branch">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetTerminalList_By_Branch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTerminalList_Detail">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetTerminalList_Detail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateApplicationUsersStatus">
+      <soap12:operation soapAction="http://ws.instawin.ph/UpdateApplicationUsersStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBranchProfileStatus">
+      <soap12:operation soapAction="http://ws.instawin.ph/UpdateBranchProfileStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBranchTerminalsStatus">
+      <soap12:operation soapAction="http://ws.instawin.ph/UpdateBranchTerminalsStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBranchTerminals">
+      <soap12:operation soapAction="http://ws.instawin.ph/InsertBranchTerminals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchList_BVL">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetBranchList_BVL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRPTLoginHistory">
+      <soap12:operation soapAction="http://ws.instawin.ph/GetRPTLoginHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InstawinWebServiceAdmin">
+    <wsdl:port name="InstawinWebServiceAdminSoap" binding="tns:InstawinWebServiceAdminSoap">
+      <soap:address location="http://210.14.26.167/kgiws/backoffice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="InstawinWebServiceAdminSoap12" binding="tns:InstawinWebServiceAdminSoap12">
+      <soap12:address location="http://210.14.26.167/kgiws/backoffice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

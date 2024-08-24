@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="fastwin_lucky_games_WebReference_InstawinWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://210.14.26.167/kgiws/main.asmx</Value>
+    </Setting>
+    <Setting Name="fastwin_lucky_games_WebReference1_InstawinWebServiceAdmin" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://210.14.26.167/kgiws/backoffice.asmx</Value>
+    </Setting>
+    <Setting Name="fastwin_lucky_games_WebReference2_InstawinWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://116.93.80.103/cmsws/main.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
